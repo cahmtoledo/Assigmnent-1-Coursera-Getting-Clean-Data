@@ -76,5 +76,7 @@ df <- rbind(dftrain, dftest)
 
 tidy <- df %>% group_by(Id,Type, Activity) %>% summarise_each(funs(mean))
 
-write.csv(tidy, "tidy.csv")
-write.csv(df, "Table.csv")
+write.csv(tidy, "tidy.csv", row.names = F)
+write.csv(df, "Table.csv", row.names = F)
+
+write.table(tidy, "tidy.txt", row.names = F)
